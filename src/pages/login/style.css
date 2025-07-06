@@ -1,0 +1,171 @@
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Gradients */
+.gradient-bg {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.custom-checkbox:checked {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Dark mode checkbox */
+.dark .custom-checkbox {
+    border-color: #4b5563;
+}
+
+.dark .custom-checkbox:checked {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* Floating button effect */
+.floating-btn {
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3), 0 2px 4px -1px rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
+}
+
+.floating-btn:active {
+transform: translateY(0);
+}
+
+/* Input focus effect */
+.input-focus {
+box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Smooth transitions */
+.smooth-transition {
+transition: all 0.3s ease;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #FF6B35, #6E44FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #FF6B35, #6E44FF);
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-dark {
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.floating-btn {
+    box-shadow: 0 4px 20px rgba(110, 68, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(110, 68, 255, 0.4);
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-focus {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+.input-focus:focus {
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.5);
+}
+
+/* Disabled button */
+.disabled-btn {
+    background: #e5e7eb !important;
+    color: #9ca3af !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+}
+
+.disabled-btn:hover {
+    transform: none !important;
+}
+
+/* Social login buttons */
+.social-btn {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-dark-700 flex items-center justify-center smooth-transition;
+}
+
+.social-btn:hover {
+    @apply bg-gray-50 dark:bg-dark-700;
+}
+
+/* Remember me checkbox */
+.custom-checkbox {
+    @apply h-4 w-4 rounded border-gray-300 dark:border-dark-700 text-primary-light focus:ring-primary-light smooth-transition;
+}

@@ -1,0 +1,451 @@
+
+<body class="bg-gray-50 dark:bg-dark-900 min-h-screen flex items-center justify-center p-4 transition-colors duration-300">
+    <div class="w-full max-w-md">
+        <!-- Logo and Title -->
+        <div class="text-center mb-8">
+            <div class="w-20 h-20 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4 shadow-lg animate-float">
+                <span class="text-white font-bold text-2xl">GM</span>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-white">Go<span class="gradient-text">Money</span></h1>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">Crie sua conta e comece a controlar suas finanças</p>
+        </div>
+
+        <!-- Registration Card -->
+        <div class="bg-white dark:bg-dark-800 rounded-2xl shadow-xl overflow-hidden">
+            <div class="p-8">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Criar conta</h2>
+                
+                <!-- Registration Form -->
+                <form id="register-form">
+                    <!-- Full Name Input -->
+                    <div class="mb-5">
+                        <label for="fullname" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nome completo</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-user text-gray-400"></i>
+                            </div>
+                            <input 
+                                type="text" 
+                                id="fullname" 
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-900 text-gray-800 dark:text-white smooth-transition input-focus focus:outline-none focus:ring-0" 
+                                placeholder="Seu nome completo"
+                                required
+                            >
+                        </div>
+                    </div>
+                    
+                    <!-- Email Input -->
+                    <div class="mb-5">
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">E-mail</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-envelope text-gray-400"></i>
+                            </div>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-900 text-gray-800 dark:text-white smooth-transition input-focus focus:outline-none focus:ring-0" 
+                                placeholder="seu@email.com"
+                                required
+                            >
+                        </div>
+                    </div>
+                    
+                    <!-- Password Input -->
+                    <div class="mb-5">
+                        <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Senha</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-gray-400"></i>
+                            </div>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-900 text-gray-800 dark:text-white smooth-transition input-focus focus:outline-none focus:ring-0" 
+                                placeholder="••••••••"
+                                required
+                                minlength="8"
+                            >
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <button type="button" id="toggle-password" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-2 flex items-center">
+                            <div id="password-strength" class="password-strength strength-0 rounded-full mr-2"></div>
+                            <span id="password-strength-text" class="text-xs text-gray-500 dark:text-gray-400">Força da senha</span>
+                        </div>
+                        <div id="password-hints" class="text-xs text-gray-500 dark:text-gray-400 mt-1 hidden">
+                            <p class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-1 hidden" id="length-check"></i> Mínimo 8 caracteres</p>
+                            <p class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-1 hidden" id="number-check"></i> Pelo menos 1 número</p>
+                            <p class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-1 hidden" id="special-check"></i> Pelo menos 1 caractere especial</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Confirm Password Input -->
+                    <div class="mb-5">
+                        <label for="confirm-password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Confirmar senha</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-gray-400"></i>
+                            </div>
+                            <input 
+                                type="password" 
+                                id="confirm-password" 
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-900 text-gray-800 dark:text-white smooth-transition input-focus focus:outline-none focus:ring-0" 
+                                placeholder="••••••••"
+                                required
+                                minlength="8"
+                            >
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <button type="button" id="toggle-confirm-password" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-1">
+                            <p id="password-match-text" class="text-xs hidden">
+                                <i class="fas fa-check-circle mr-1"></i>
+                                <span>As senhas coincidem</span>
+                            </p>
+                            <p id="password-mismatch-text" class="text-xs hidden">
+                                <i class="fas fa-times-circle mr-1"></i>
+                                <span>As senhas não coincidem</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Birth Date Input -->
+                    <div class="mb-6">
+                        <label for="birthdate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Data de nascimento</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-calendar-alt text-gray-400"></i>
+                            </div>
+                            <input 
+                                type="date" 
+                                id="birthdate" 
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-900 text-gray-800 dark:text-white smooth-transition input-focus focus:outline-none focus:ring-0 appearance-none"
+                                required
+                            >
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="birthdate-display">DD/MM/AAAA</p>
+                        <input type="hidden" id="birthdate-formatted" name="birthdate">
+                    </div>
+                    
+                    <!-- Terms and Submit -->
+                    <div class="mb-6">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input 
+                                    id="terms" 
+                                    type="checkbox" 
+                                    class="h-4 w-4 rounded border-gray-300 dark:border-dark-700 text-primary-light focus:ring-primary-light smooth-transition"
+                                    required
+                                >
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="terms" class="text-gray-700 dark:text-gray-300">
+                                    Eu concordo com os <a href="#" class="text-primary-light hover:text-primary-dark font-medium">Termos de Serviço</a> e <a href="#" class="text-primary-light hover:text-primary-dark font-medium">Política de Privacidade</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button 
+                        type="submit" 
+                        id="submit-btn"
+                        class="w-full gradient-bg text-white px-6 py-3 rounded-xl hover:opacity-90 smooth-transition floating-btn flex items-center justify-center disabled-btn"
+                        disabled
+                    >
+                        <span>Criar conta</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </form>
+                
+                <!-- Login Link -->
+                <div class="text-center mt-6">
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">
+                        Já tem uma conta? 
+                        <a href="#" class="text-primary-light hover:text-primary-dark font-medium smooth-transition">Faça login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <div class="flex justify-center mt-6">
+            <button id="theme-toggle" class="w-10 h-10 rounded-full bg-white dark:bg-dark-700 shadow-md flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-600 smooth-transition">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Verifica o tema salvo no localStorage ou a preferência do sistema
+        function checkTheme() {
+            if (localStorage.getItem('theme') === 'dark' || 
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Inicializa o tema
+        checkTheme();
+
+        // Alterna o tema
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Observa mudanças na preferência do sistema
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (localStorage.getItem('theme') === null) {
+                checkTheme();
+            }
+        });
+
+        // Toggle Password Visibility
+        const togglePassword = document.getElementById('toggle-password');
+        const toggleConfirmPassword = document.getElementById('toggle-confirm-password');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            togglePassword.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+
+        toggleConfirmPassword.addEventListener('click', () => {
+            const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPasswordInput.setAttribute('type', type);
+            toggleConfirmPassword.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+
+        // Password Strength Checker
+        const passwordStrength = document.getElementById('password-strength');
+        const passwordStrengthText = document.getElementById('password-strength-text');
+        const passwordHints = document.getElementById('password-hints');
+        const lengthCheck = document.getElementById('length-check');
+        const numberCheck = document.getElementById('number-check');
+        const specialCheck = document.getElementById('special-check');
+        const passwordMatchText = document.getElementById('password-match-text');
+        const passwordMismatchText = document.getElementById('password-mismatch-text');
+        const submitBtn = document.getElementById('submit-btn');
+
+        function checkPasswordMatch() {
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+            
+            if (password && confirmPassword) {
+                if (password === confirmPassword) {
+                    passwordMatchText.classList.remove('hidden');
+                    passwordMatchText.classList.add('password-match');
+                    passwordMismatchText.classList.add('hidden');
+                    return true;
+                } else {
+                    passwordMismatchText.classList.remove('hidden');
+                    passwordMismatchText.classList.add('password-mismatch');
+                    passwordMatchText.classList.add('hidden');
+                    return false;
+                }
+            } else {
+                passwordMatchText.classList.add('hidden');
+                passwordMismatchText.classList.add('hidden');
+                return false;
+            }
+        }
+
+        function validateForm() {
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const birthdate = document.getElementById('birthdate').value;
+            const terms = document.getElementById('terms').checked;
+            
+            const isPasswordValid = password.length >= 8;
+            const isPasswordMatch = checkPasswordMatch();
+            
+            if (fullname && email && isPasswordValid && isPasswordMatch && birthdate && terms) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('disabled-btn');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('disabled-btn');
+            }
+        }
+
+        passwordInput.addEventListener('input', () => {
+            const password = passwordInput.value;
+            let strength = 0;
+            
+            // Check password length
+            if (password.length >= 8) {
+                strength++;
+                lengthCheck.classList.remove('hidden');
+            } else {
+                lengthCheck.classList.add('hidden');
+            }
+            
+            // Check for numbers
+            if (/\d/.test(password)) {
+                strength++;
+                numberCheck.classList.remove('hidden');
+            } else {
+                numberCheck.classList.add('hidden');
+            }
+            
+            // Check for special characters
+            if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+                strength++;
+                specialCheck.classList.remove('hidden');
+            } else {
+                specialCheck.classList.add('hidden');
+            }
+            
+            // Check for uppercase letters
+            if (/[A-Z]/.test(password)) {
+                strength++;
+            }
+            
+            // Update strength indicator
+            passwordStrength.className = 'password-strength strength-' + strength + ' rounded-full mr-2';
+            
+            // Update strength text
+            const strengthTexts = ['Muito fraca', 'Fraca', 'Moderada', 'Forte', 'Muito forte'];
+            const strengthColors = ['text-red-500', 'text-orange-500', 'text-yellow-500', 'text-blue-500', 'text-green-500'];
+            
+            passwordStrengthText.textContent = strengthTexts[strength];
+            passwordStrengthText.className = 'text-xs ' + strengthColors[strength];
+            
+            // Show hints if password is not empty
+            if (password.length > 0) {
+                passwordHints.classList.remove('hidden');
+            } else {
+                passwordHints.classList.add('hidden');
+            }
+            
+            // Validate form
+            validateForm();
+        });
+
+        confirmPasswordInput.addEventListener('input', () => {
+            checkPasswordMatch();
+            validateForm();
+        });
+
+        // Birthdate Handling
+        const birthdateInput = document.getElementById('birthdate');
+        const birthdateDisplay = document.getElementById('birthdate-display');
+        const birthdateFormatted = document.getElementById('birthdate-formatted');
+
+        birthdateInput.addEventListener('change', () => {
+            const date = new Date(birthdateInput.value);
+            
+            if (!isNaN(date.getTime())) {
+                // Format for display (DD/MM/YYYY)
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const year = date.getFullYear();
+                birthdateDisplay.textContent = `${day}/${month}/${year}`;
+                
+                // Format for form submission (YYYY-MM-DD)
+                birthdateFormatted.value = birthdateInput.value;
+            } else {
+                birthdateDisplay.textContent = 'DD/MM/AAAA';
+                birthdateFormatted.value = '';
+            }
+            
+            validateForm();
+        });
+
+        // Form Validation on Input
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateForm();
+            });
+            
+            input.addEventListener('focus', () => {
+                input.classList.add('input-focus');
+            });
+            
+            input.addEventListener('blur', () => {
+                input.classList.remove('input-focus');
+            });
+        });
+
+        // Terms checkbox validation
+        document.getElementById('terms').addEventListener('change', validateForm);
+
+        // Form Submission
+        const registerForm = document.getElementById('register-form');
+
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const birthdate = document.getElementById('birthdate-formatted').value;
+            const terms = document.getElementById('terms').checked;
+            
+            // Validate birthdate
+            if (!birthdate) {
+                alert('Por favor, insira uma data de nascimento válida');
+                return;
+            }
+            
+            // Validate terms
+            if (!terms) {
+                alert('Você deve aceitar os termos e condições para continuar');
+                return;
+            }
+            
+            // Validate password match
+            if (password !== confirmPasswordInput.value) {
+                alert('As senhas não coincidem');
+                return;
+            }
+            
+            // Simulate registration (in a real app, you would make an API call here)
+            console.log('Registration attempt with:', { fullname, email, password, birthdate, terms });
+            
+            // Show loading state
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Criando conta...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // Redirect to dashboard (replace with your actual redirect logic)
+                alert('Conta criada com sucesso! Redirecionando...');
+                // window.location.href = 'dashboard.html';
+                
+                // Reset button (in case redirect fails)
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Initial form validation
+        validateForm();
+    </script>

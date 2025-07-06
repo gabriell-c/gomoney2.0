@@ -1,0 +1,159 @@
+
+
+.gradient-text {
+background: linear-gradient(90deg, #FF6B35, #6E44FF);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+
+.gradient-bg {
+background: linear-gradient(135deg, #FF6B35, #6E44FF);
+}
+
+.glass {
+background: rgba(255, 255, 255, 0.08);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-dark {
+background: rgba(15, 15, 15, 0.6);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.floating-btn {
+box-shadow: 0 4px 20px rgba(110, 68, 255, 0.3);
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 24px rgba(110, 68, 255, 0.4);
+}
+
+.animate-float {
+animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+
+.smooth-transition {
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-focus {
+transition: all 0.3s ease;
+box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+.input-focus:focus {
+box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.5);
+}
+
+/* Custom date input styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+filter: invert(0.5);
+cursor: pointer;
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+filter: invert(1);
+}
+
+/* Password strength indicator */
+.password-strength {
+height: 4px;
+transition: all 0.3s ease;
+}
+
+.strength-0 {
+width: 0%;
+background-color: #ef4444;
+}
+
+.strength-1 {
+width: 25%;
+background-color: #ef4444;
+}
+
+.strength-2 {
+width: 50%;
+background-color: #f59e0b;
+}
+
+.strength-3 {
+width: 75%;
+background-color: #3b82f6;
+}
+
+.strength-4 {
+width: 100%;
+background-color: #10b981;
+}
+
+/* Disabled button */
+.disabled-btn {
+background: #e5e7eb !important;
+color: #9ca3af !important;
+cursor: not-allowed !important;
+box-shadow: none !important;
+}
+
+.disabled-btn:hover {
+transform: none !important;
+}
+
+/* Password match indicator */
+.password-match {
+color: #10b981;
+}
+
+.password-mismatch {
+color: #ef4444;
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+animation: float 3s ease-in-out infinite;
+}
+
+.gradient-bg {
+background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+.gradient-text {
+background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+
+/* Password strength indicator */
+.password-strength {
+width: 60px;
+height: 4px;
+background-color: #e5e7eb;
+}
+
+.strength-0 { width: 15px; background-color: #ef4444; }
+.strength-1 { width: 30px; background-color: #f97316; }
+.strength-2 { width: 45px; background-color: #f59e0b; }
+.strength-3 { width: 60px; background-color: #3b82f6; }
+.strength-4 { width: 60px; background-color: #10b981; }
+
+.password-match { color: #10b981; }
+.password-mismatch { color: #ef4444; }
+
+.disabled-btn { opacity: 0.7; cursor: not-allowed; }

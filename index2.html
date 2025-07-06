@@ -1,0 +1,16 @@
+<script>
+    fetch('https://gomoney-backend.onrender.com/login_action.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams({
+        email: 'exemplo@hotmail.com',
+        senha: '123'
+      })
+    })
+    .then(response => response.text()) // <- aqui
+    .then(data => console.log(data))   // <- isso vai mostrar o erro real
+    .catch(error => console.error('Erro:', error));
+  </script>
+  
