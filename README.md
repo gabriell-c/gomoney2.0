@@ -55,7 +55,7 @@ npm run dev
 <img src="readme_img/GoMoney.png" alt="Previw_desktop1"></img>
 <br>
 <br>
-<img src="readme_imgs/GoMoney_add.png" alt="Previw_desktop2"></img>
+<img src="readme_img/GoMoney_add.png" alt="Previw_desktop2"></img>
 
 <h2 align="center">📱Preview</h2>
 
