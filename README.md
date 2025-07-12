@@ -30,7 +30,7 @@
 ---
 
 
-<h2><a href='https://github.com/gabriell-c/gomoney_backend'/>API</a> utilizada</h2>
+<h2><a href='https://github.com/gabriell-c/gomoney-API'/>API</a> utilizada</h2>
 
 <h2>Instalando</h2>
 
